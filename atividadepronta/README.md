@@ -174,13 +174,21 @@ npm run build
 npm start
 ```
 
-## 🌐 Deploy na Vercel
+### 5. Deploy na Vercel
 
-1. Faça push do código para o GitHub
-2. Acesse [vercel.com](https://vercel.com)
-3. Importe o repositório
-4. Configure as variáveis de ambiente (mesmas do `.env.local`)
-5. Deploy!
+1. Faça push do código para o GitHub.
+2. Acesse [vercel.com](https://vercel.com) e importe o projeto.
+3. **Importante**: No painel do Vercel, configure as seguintes Variáveis de Ambiente (`Environment Variables`):
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `LLM_API_KEY`
+4. Deploy!
+
+> **Dica de 404 no Vercel**: Se as rotas `/api/...` retornarem 404, verifique se os nomes das pastas no Git estão exatamente em minúsculo. O Linux do Vercel diferencia `api/Generate-Activity` de `api/generate-activity`.
+
+## 🧪 Diagnóstico de API
+Se encontrar problemas com as rotas de API em produção, acesse `/api/test` no seu navegador. Se retornar `{status: "ok"}`, as APIs estão funcionando e o problema pode estar nas chaves de ambiente ou no corpo da requisição.
 
 ## 📖 Como Usar
 

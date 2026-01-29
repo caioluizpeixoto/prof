@@ -67,12 +67,12 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
 
     return (
         <form onSubmit={handleSubmit} className="card max-w-3xl mx-auto">
-            <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-heading font-bold text-gray-900 dark:text-white mb-6">
                 Gerar Nova Atividade
             </h2>
 
             {error && (
-                <div className="bg-red-50 border-2 border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
+                <div className="bg-red-50 dark:bg-red-900/10 border-2 border-red-200 dark:border-red-900/30 text-red-700 dark:text-red-400 px-4 py-3 rounded-lg mb-6">
                     <p className="font-semibold">❌ {error}</p>
                 </div>
             )}
@@ -80,7 +80,7 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
             <div className="space-y-6">
                 {/* Série */}
                 <div>
-                    <label htmlFor="serie" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="serie" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Série/Ano Escolar *
                     </label>
                     <select
@@ -101,7 +101,7 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
 
                 {/* Disciplina */}
                 <div>
-                    <label htmlFor="disciplina" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="disciplina" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Disciplina *
                     </label>
                     <select
@@ -122,7 +122,7 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
 
                 {/* Tema */}
                 <div>
-                    <label htmlFor="tema" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="tema" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Tema da Atividade *
                     </label>
                     <input
@@ -135,14 +135,14 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
                         onChange={(e) => setFormData({ ...formData, tema: e.target.value })}
                         maxLength={200}
                     />
-                    <p className="text-sm text-gray-500 mt-1">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                         {formData.tema.length}/200 caracteres
                     </p>
                 </div>
 
                 {/* Quantidade de Questões */}
                 <div>
-                    <label htmlFor="quantidade" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="quantidade" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Quantidade de Questões *
                     </label>
                     <input
@@ -155,14 +155,14 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
                         value={formData.quantidadeQuestoes}
                         onChange={(e) => setFormData({ ...formData, quantidadeQuestoes: parseInt(e.target.value) })}
                     />
-                    <p className="text-sm text-gray-500 mt-1">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                         Mínimo: 1 | Máximo: 20
                     </p>
                 </div>
 
                 {/* Dificuldade */}
                 <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
                         Nível de Dificuldade *
                     </label>
                     <div className="flex gap-4">
@@ -177,9 +177,9 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
                                     value={option.value}
                                     checked={formData.dificuldade === option.value}
                                     onChange={(e) => setFormData({ ...formData, dificuldade: e.target.value as any })}
-                                    className="w-4 h-4 text-primary focus:ring-primary"
+                                    className="w-4 h-4 text-primary focus:ring-primary dark:bg-gray-900 border-gray-300 dark:border-gray-700"
                                 />
-                                <span className="text-gray-700">{option.label}</span>
+                                <span className="text-gray-700 dark:text-gray-300">{option.label}</span>
                             </label>
                         ))}
                     </div>
@@ -187,7 +187,7 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
 
                 {/* Tipo de Questão */}
                 <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-3">
+                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
                         Tipo de Questões *
                     </label>
                     <div className="space-y-2">
@@ -202,9 +202,9 @@ export default function ActivityForm({ onSuccess }: ActivityFormProps) {
                                     value={option.value}
                                     checked={formData.tipoQuestao === option.value}
                                     onChange={(e) => setFormData({ ...formData, tipoQuestao: e.target.value as any })}
-                                    className="w-4 h-4 text-primary focus:ring-primary"
+                                    className="w-4 h-4 text-primary focus:ring-primary dark:bg-gray-900 border-gray-300 dark:border-gray-700"
                                 />
-                                <span className="text-gray-700">{option.label}</span>
+                                <span className="text-gray-700 dark:text-gray-300">{option.label}</span>
                             </label>
                         ))}
                     </div>

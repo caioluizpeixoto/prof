@@ -1,0 +1,5 @@
+{
+    "buildCommand": "cd atividadepronta && npm run build",
+    "outputDirectory": "atividadepronta/.next",
+    "installCommand": "cd atividadepronta && npm install"
+}

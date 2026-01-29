@@ -24,11 +24,11 @@ export default function AppPage() {
             <main className="flex-1 gradient-bg py-12">
                 <div className="container-main">
                     {/* Título */}
-                    <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
+                    <div className="text-center mb-12">
+                        <h1 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 dark:text-white mb-4">
                             Gerador de Atividades
                         </h1>
-                        <p className="text-xl text-gray-600">
+                        <p className="text-xl text-gray-600 dark:text-gray-400">
                             Preencha os campos abaixo e crie sua atividade em segundos
                         </p>
                     </div>
